@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .writing {
+    @apply text-xl md:text-2xl lg:text-4xl font-bold;
+  }
+  .grid {
+    @apply rounded-lg bg-blue-500;
+  }
+  .testing {
+    @apply text-xs md:text-base;
+  }
+}
+@layer base {
+  .testing ul {
+    @apply list-disc list-inside mt-1 mb-5;
+  }
+
+  .testing li {
+    @apply mr-10;
+  }
+  .testing table {
+    @apply border;
+  }
+  .testing table tr td {
+    @apply border-2 border-gray-500;
+  }
+  .testing p {
+    @apply mt-2;
+  }
+  .vocabularyTable table {
+    @apply w-11/12;
+  }
+  .vocabularyTable table tr {
+    @apply w-full;
+  }
+}

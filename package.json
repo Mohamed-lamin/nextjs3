@@ -1,0 +1,34 @@
+{
+  "name": "easyenglish",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prep": "npm install next react react-dom eslint rimraf -g && yarn add --dev eslint",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --ignore-path .prettierignore --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint --ignore-path .eslintignore . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "yarn format & next lint --dir src",
+    "clean-cache": "rimraf .next",
+    "rimraf": "./node_modules/rimraf/bin.js",
+    "clean": "yarn prep && rimraf node_modules"
+},
+  "dependencies": {
+    "html-table-to-json": "^1.0.0",
+    "mongoose": "^6.7.2",
+    "next": "13.0.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-simple-typewriter": "^4.0.5",
+    "react-speech-kit": "^3.0.1",
+    "typewriter-effect": "^2.19.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.2",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.3"
+  }
+}
