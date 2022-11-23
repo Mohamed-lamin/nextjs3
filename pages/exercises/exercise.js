@@ -9,13 +9,9 @@ function Exercise({ key, subject, vertoput, restofsentences, theverb }) {
   const [test, setTest] = useState("")
 
   function check(res) {
-    res !== restrue
+    res !== vertoput
       ? setShtr(true) & setSh(false)
       : setShtr(false) & setSh(true)
-    console.log(res)
-    console.log(restrue)
-    console.log(sh)
-    console.log(shtr)
   }
 
   return (
@@ -29,7 +25,11 @@ function Exercise({ key, subject, vertoput, restofsentences, theverb }) {
             <span className="">
               <input
                 className="border-2 border-blue-300 rounded text-center"
-                onChange={test ? e => setTest("") : e => setRes(e.target.value)}
+                onChange={
+                  test || sh || shtr
+                    ? e => setTest("") & setSh(false) & setShtr(false)
+                    : e => setRes(e.target.value)
+                }
               />
               <span className="mr-2">{theverb}</span>
             </span>
@@ -54,13 +54,13 @@ function Exercise({ key, subject, vertoput, restofsentences, theverb }) {
               className="bg-blue-300 w-full rounded-full hover:bg-white hover:border-2 hover:border-blue-300  "
               onClick={() => check(res)}
             >
-              check
+              Check
             </button>
             <button
               className="bg-blue-300 w-full rounded-full hover:bg-white hover:border-2 hover:border-blue-300  "
               onClick={() => setTest(vertoput)}
             >
-              show
+              Show
             </button>
           </div>
         </div>
