@@ -3,7 +3,6 @@ import Link from "next/link"
 
 // let use = []
 function Vochome({ categories }) {
-  console.log(categories)
   return (
     <div className="container px-0 mx-auto w-11/12 " dir="rtl">
       <h1 className="text-xl font-bold text-center mb-10 text-blue-300">
@@ -48,7 +47,7 @@ export async function getStaticProps() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       query: `{
-        categories(where: {exclude: "dGVybTox"}) {
+        categories( where: {excludeTree: ["dGVybTox", "dGVybToyNg=="], order: ASC, orderby: SLUG}) {
           nodes {
             name
             posts {
