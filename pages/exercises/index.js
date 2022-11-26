@@ -9,7 +9,7 @@ function Home({ posts }) {
       </h1>
       {posts.map(item => (
         <div key={item.index}>
-          <h1 className="text-sm md:text-noraml font-bold mx-10 mt-10 mb-3">
+          <h1 className="text-xs md:text-base font-bold mx-10 mt-10 mb-3">
             {item.name}
           </h1>
           {item.posts.nodes.map((itemsub, index) => (

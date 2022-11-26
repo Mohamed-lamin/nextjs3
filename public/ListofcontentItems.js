@@ -18,10 +18,10 @@ const ListofcontentItems = [
     Link: "/vocabulary",
   },
   {
-    nameEn: "explanation",
-    nameAr: "الشرح",
+    nameEn: "conversation",
+    nameAr: "محادثة",
     photo: "/images/explanation.png",
-    Link: "explanation",
+    Link: "/conversation",
   },
 ]
 

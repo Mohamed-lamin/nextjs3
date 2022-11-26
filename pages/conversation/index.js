@@ -2,30 +2,25 @@ import React from "react"
 import Link from "next/link"
 
 // let use = []
-function Vochome({ categories }) {
-  console.log(categories)
+function Vochome({ posts }) {
+  const titlesArray = posts
   return (
     <div className="container px-0 mx-auto w-11/12 " dir="rtl">
       <h1 className="text-xl font-bold text-center mb-10 text-blue-300">
-        Grammar - النحو
+        Conversations - محادثات
       </h1>
       <div>
-        {categories.map((item, index) => (
+        {titlesArray?.map((item, index) => (
           <div key={index}>
-            <div className="flex mb-2 mt-6">
-              <div className="text-xs md:text-lg md:mr-4 md:ml-4 font-bold">
-                <h2>{item.name}</h2>
-              </div>
-            </div>
-            {item.posts.nodes.map((p, index) => (
-              <div key={item.posts.nodes.id}>
+            {item.posts.nodes.map((p, id) => (
+              <div key={id}>
                 <ul className="text-xs md:text-base md:mr-14 list-disc">
                   <li className="m-1">
-                    <Link href={"/grammar/" + p.id}>
+                    <Link href={"/conversation/" + p.id}>
                       <div className=" hover:underline decoration-sky-600 text-sky-500">
                         <div className="flex">
                           <div className="mr-4 ml-4 ">
-                            <h2 className=" ">{p.title}</h2>
+                            <h2 className=" ">{p.title} </h2>
                           </div>
                         </div>
                       </div>
@@ -48,7 +43,7 @@ export async function getStaticProps() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       query: `{
-        categories(where: {exclude: "dGVybTox"}) {
+        categories(where: {slug: "conversations"}) {
           nodes {
             name
             posts {
@@ -65,7 +60,7 @@ export async function getStaticProps() {
   const res = await posts.json()
   return {
     props: {
-      categories: res.data.categories.nodes,
+      posts: res.data.categories.nodes,
     },
   }
 }

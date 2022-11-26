@@ -5,7 +5,8 @@
   "scripts": {
     "prep": "npm install next react react-dom eslint rimraf -g && yarn add --dev eslint",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build ",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "format": "prettier --ignore-path .prettierignore --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint": "eslint --ignore-path .eslintignore . --ext ts --ext tsx --ext js --ext jsx",
@@ -13,11 +14,13 @@
     "clean-cache": "rimraf .next",
     "rimraf": "./node_modules/rimraf/bin.js",
     "clean": "yarn prep && rimraf node_modules"
-},
+  },
   "dependencies": {
     "html-table-to-json": "^1.0.0",
     "mongoose": "^6.7.2",
     "next": "13.0.2",
+    "next-sitemap": "^3.1.32",
+    "nextjs-sitemap-generator": "^1.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-simple-typewriter": "^4.0.5",

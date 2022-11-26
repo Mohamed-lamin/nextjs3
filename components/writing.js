@@ -3,7 +3,10 @@ import { Cursor, useTypewriter } from "react-simple-typewriter"
 import styles from "../styles/Home.module.css"
 function Writing() {
   const [text, count] = useTypewriter({
-    words: ["مرحبا بك على Easy English", "Welcome to Easy English"],
+    words: [
+      "مرحبا بك على Perfect-English-Foryou",
+      "Welcome to Perfect-English-Foryou",
+    ],
     loop: true,
     delaySpeed: 2000,
   })
