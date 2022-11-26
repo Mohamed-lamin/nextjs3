@@ -1,7 +1,6 @@
 import React from "react"
 import Link from "next/link"
 
-// let use = []
 function Vochome({ categories }) {
   return (
     <div className="container px-0 mx-auto w-11/12 " dir="rtl">
@@ -50,7 +49,7 @@ export async function getStaticProps() {
         categories( where: {excludeTree: ["dGVybTox", "dGVybToyNg=="], order: ASC, orderby: SLUG}) {
           nodes {
             name
-            posts {
+            posts (first:10000) {
               nodes {
                 id
                 title
