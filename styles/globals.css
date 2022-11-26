@@ -21,8 +21,11 @@
   .testing li {
     @apply mr-10;
   }
+  .testing h3 {
+    @apply font-bold mt-3;
+  }
   .testing table {
-    @apply border;
+    @apply border my-3;
   }
   .testing table tr td {
     @apply border-2 border-gray-500;

@@ -3,13 +3,18 @@ import React from "react"
 function Contactus({ pages }) {
   console.log(pages)
   const pageslook = pages.nodes
-  const privacypolicy = pageslook.find(page => page.title === "Privacy Policy")
-  console.log(privacypolicy)
+  const contactus = pageslook.find(page => page.title === "Contact us")
+
   return (
-    <div>
-      <article
-        dangerouslySetInnerHTML={{ __html: privacypolicy.content }}
-      ></article>
+    <div className="container mx-auto w-9/12 " dir="rtl">
+      <h1 className="text-xl font-bold text-center mb-10 text-blue-300">
+        Privacy Policy
+      </h1>
+      <div
+        dir="ltr"
+        className="testing"
+        dangerouslySetInnerHTML={{ __html: contactus.content }}
+      ></div>
     </div>
   )
 }

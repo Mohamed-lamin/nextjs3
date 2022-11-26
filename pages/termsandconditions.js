@@ -1,15 +1,21 @@
 import React from "react"
 
 function Termsandconditions({ pages }) {
-  console.log(pages)
   const pageslook = pages.nodes
-  const privacypolicy = pageslook.find(page => page.title === "Privacy Policy")
-  console.log(privacypolicy)
+  const privacypolicy = pageslook.find(
+    page => page.title === "Terms and Conditions"
+  )
+
   return (
-    <div>
-      <article
+    <div className="container mx-auto w-9/12 " dir="rtl">
+      <h1 className="text-xl font-bold text-center mb-10 text-blue-300">
+        Terms and Conditions
+      </h1>
+      <div
+        dir="ltr"
+        className="testing"
         dangerouslySetInnerHTML={{ __html: privacypolicy.content }}
-      ></article>
+      ></div>
     </div>
   )
 }
