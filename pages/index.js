@@ -1,9 +1,11 @@
 import Head from "next/head"
 import React from "react"
 import Link from "next/link"
+import Script from "next/script"
 import Writing from "../components/writing"
 import Content from "../components/content"
 import ListofcontentItems from "../public/ListofcontentItems"
+import { useState, useEffect } from "react"
 
 export default function Home() {
   return (

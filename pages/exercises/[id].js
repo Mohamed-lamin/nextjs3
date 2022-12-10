@@ -1,14 +1,14 @@
 import React from "react"
 import Exercise from "./exercise"
+import Head from "next/head"
 import { useState, useEffect } from "react"
 import HtmlTableToJson from "html-table-to-json"
 
 const Details = ({ post }) => {
-  console.log(post)
   const [table, setTable] = useState([])
   const [tableexercise, setTableexercise] = useState([])
   // const table = HtmlTableToJson.parse(html)
-  console.log(table)
+
   // const array = table.results[0]
   useEffect(() => {
     setTable(HtmlTableToJson.parse(post.content).results[0])
@@ -17,22 +17,36 @@ const Details = ({ post }) => {
   // ---------------getthetable---------------------------
 
   return (
-    <div className="container w-full mx-auto flex-col flex justify-around ">
-      <h1 className="text-xl font-bold text-center mb-10 text-blue-300">
-        {/* {post.title} */}
-      </h1>
-      {table.map((item, index) => (
-        <div key={index} className="w-full mb-20">
-          <Exercise
-            key={item.index}
-            subject={item.subject}
-            vertoput={item.vertoput}
-            restofsentences={item.restofsentence}
-            theverb={item.theverb}
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <Head>
+        <title>{post.title}</title>
+        <meta
+          name="description"
+          content={`${post.title} تمارين باللغة الإنجليزية`}
+        />
+        <meta
+          property="og:title"
+          content={`${post.title} تمارين باللغة الإنجليزية`}
+        />
+        <meta property="og:image" content="../../public/images/exercises.png" />
+      </Head>
+      <div className="container w-full mx-auto flex-col flex justify-around ">
+        <h1 className="text-xl font-bold text-center mb-10 text-blue-300">
+          {post.title}
+        </h1>
+        {table.map((item, index) => (
+          <div key={index} className="w-full mb-20">
+            <Exercise
+              key={item.index}
+              subject={item.subject}
+              vertoput={item.vertoput}
+              restofsentences={item.restofsentence}
+              theverb={item.theverb}
+            />
+          </div>
+        ))}
+      </div>
+    </>
   )
 }
 export default Details

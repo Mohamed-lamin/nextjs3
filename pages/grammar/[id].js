@@ -1,18 +1,29 @@
 import React from "react"
-
+import Head from "next/head"
 const Otherdetails = data => {
   const post = data.post
 
   return (
-    <div className="container mx-auto w-9/12 " dir="rtl">
-      <h1 className="text-xl font-bold text-center mb-10 text-blue-300">
-        {post.title}
-      </h1>
-      <div
-        className="testing"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      ></div>
-    </div>
+    <>
+      <Head>
+        <title> {post.title} </title>
+        <meta
+          name="description"
+          content={` ${post.title} قواعد اللغة الإنجليزية ستتعلم في هذه الدرس `}
+        />
+        <meta property="og:title" content="قواعد اللغة الإنجليزية" />
+        <meta property="og:image" content="../../public/images/grammar.png" />
+      </Head>
+      <div className="container mx-auto w-9/12 " dir="rtl">
+        <h1 className="text-xl font-bold text-center mb-10 text-blue-300">
+          {post.title}
+        </h1>
+        <div
+          className="testing"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        ></div>
+      </div>
+    </>
   )
 }
 
