@@ -8,10 +8,10 @@ function Contactus({ pages }) {
   return (
     <div className="container mx-auto w-9/12 " dir="rtl">
       <h1 className="text-xl font-bold text-center mb-10 text-blue-300">
-        Privacy Policy
+        Contact us
       </h1>
       <div
-        dir="ltr"
+        dir="rtl"
         className="testing"
         dangerouslySetInnerHTML={{ __html: contactus.content }}
       ></div>

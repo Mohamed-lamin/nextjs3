@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Image from "next/image"
+import Head from "next/head"
 import icontrue from "../../public/images/icontrue.png"
 import iconfalse from "../../public/images/iconfalse.png"
 function Exercise({ key, subject, vertoput, restofsentences, theverb }) {

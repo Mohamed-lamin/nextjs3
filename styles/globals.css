@@ -17,6 +17,15 @@
   .testing ul {
     @apply list-disc list-inside mt-1 mb-5;
   }
+  .testing .comment-reply-title {
+    @apply hidden;
+  }
+  .testing .comment-notes {
+    @apply hidden;
+  }
+  .testing .comment-form-cookies-consent {
+    @apply hidden;
+  }
 
   .testing li {
     @apply mr-10;
@@ -32,6 +41,17 @@
   }
   .testing p {
     @apply mt-2;
+  }
+  .testing p:nth-of-type(7) input {
+    @apply bg-blue-300 w-6/12 md:w-3/12 opacity-75 hover:opacity-100;
+  }
+
+  .testing textarea {
+    @apply border-2 border-blue-300 rounded w-full;
+  }
+
+  .testing input {
+    @apply border-2 border-blue-300 rounded w-full md:w-6/12;
   }
   .vocabularyTable table {
     @apply w-11/12;
