@@ -1,20 +1,37 @@
 import React from "react"
+import Head from "next/head"
 
 function Privacypolicy({ pages }) {
   const pageslook = pages.nodes
   const privacypolicy = pageslook.find(page => page.title === "Privacy Policy")
 
   return (
-    <div className="container mx-auto w-9/12 " dir="rtl">
-      <h1 className="text-xl font-bold text-center mb-10 text-blue-300">
-        Privacy Policy
-      </h1>
-      <div
-        dir="ltr"
-        className="testing"
-        dangerouslySetInnerHTML={{ __html: privacypolicy.content }}
-      ></div>
-    </div>
+    <>
+      <Head>
+        <title>Privacy Policy</title>
+        <meta
+          name="description"
+          content="Privacy Plicy for Perfect english for you"
+        />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin
+        ></link>
+      </Head>
+      <div className="container mx-auto w-9/12 " dir="rtl">
+        <h1 className="text-xl font-bold text-center mb-10 text-blue-300">
+          Privacy Policy
+        </h1>
+        <div
+          dir="ltr"
+          className="testing"
+          dangerouslySetInnerHTML={{ __html: privacypolicy.content }}
+        ></div>
+      </div>
+    </>
   )
 }
 

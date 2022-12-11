@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="">
       <Head>
-        <title>Perfect English For You تعلّم اللغة الإنجليزية</title>
+        <title>Perfect English For You تعلم اللغة الإنجليزية</title>
         <meta
           name="description"
           content="تعلّم اللغة الإنجليزية للمبتدئين و المتقدمين في اللغة الإنجليزية, مجموعة قيّمة من التمارين, و المحادثات اللتي ستثري رصيدك اللغوي الإنجليزي"
